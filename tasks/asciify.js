@@ -25,7 +25,7 @@ module.exports = function(grunt) {
       log:false
     });
 
-    var propertyName = 'asciify-' + this.target;
+    var propertyName = 'asciify_' + this.target;
 
     var self = this;
 

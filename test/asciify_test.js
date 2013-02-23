@@ -35,8 +35,8 @@ exports.suite = {
     var expected = grunt.file.read('test/expected/default_options');
     test.equal(actual, expected, 'Push a figletized version of "asciify" into the dest file');
 
-    var actual_property = grunt.config.get('asciify-default_options');
-    test.equal(actual_property, expected, 'Push a figletized version of "asciify" into the property grunt.config.get("asciify-default_options")');
+    var actual_property = grunt.config.get('asciify_default_options');
+    test.equal(actual_property, expected, 'Push a figletized version of "asciify" into the property grunt.config.get("asciify_default_options")');
 
     test.done();
   },
@@ -47,8 +47,8 @@ exports.suite = {
     var expected = grunt.file.read('test/expected/custom_options');
     test.equal(actual, expected, 'Push a figletized version of "GRUNT!" in the doom font into the dest file');
     
-    var actual_property = grunt.config.get('asciify-custom_options');
-    test.equal(actual_property, expected, 'Push a figletized version of "GRUNT!" in the doom font into the property grunt.config.get("asciify-custom_options")');
+    var actual_property = grunt.config.get('asciify_custom_options');
+    test.equal(actual_property, expected, 'Push a figletized version of "GRUNT!" in the doom font into the property grunt.config.get("asciify_custom_options")');
 
     test.done();
   },

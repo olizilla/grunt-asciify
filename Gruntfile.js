@@ -44,7 +44,7 @@ module.exports = function(grunt) {
         dest:'tmp/custom_options'
       },
 
-      toconsole:{
+      banner:{
         text: 'GRUNT-ASCIIFY!',
         options:{
           font:'graffiti',
@@ -58,6 +58,17 @@ module.exports = function(grunt) {
       tests: ['test/*_test.js'],
     },
 
+    // Use asciify to make banner
+    uglify:{
+      options: {
+        banner: '/*!\n <%= asciify_banner %> \n*/\n'
+      },
+      all:{
+        src:'Gruntfile.js',
+        dest:'Grunfile.withbanner.min.js'        
+      }
+    }
+
   });
 
   // Actually load this plugin's task(s).
@@ -67,12 +78,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-nodeunit');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
   grunt.registerTask('test', ['clean', 'asciify', 'nodeunit']);
 
   // By default, lint and run all tests.
-  grunt.registerTask('default', ['jshint', 'asciify']);
+  grunt.registerTask('default', ['jshint', 'asciify', 'uglify']);
 
 };
