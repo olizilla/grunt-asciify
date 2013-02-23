@@ -1,14 +1,33 @@
 # grunt-asciify
 
->  ________ __________  ____ ___  _______   ___________            _____     __________________  .___ .___ ________________.___.._.
-> /  _____/ \______   \|    |   \ \      \  \__    ___/           /  _  \   /   _____/\_   ___ \ |   ||   |\_   _____/\__  |   || |
->/   \  ___  |       _/|    |   / /   |   \   |    |     ______  /  /_\  \  \_____  \ /    \  \/ |   ||   | |    __)   /   |   || |
->     \_\  \ |    |   \|    |  / /    |    \  |    |    /_____/ /    |    \ /        \\     \____|   ||   | |     \    \____   | \|
-> \______  / |____|_  /|______/  \____|__  /  |____|            \____|__  //_______  / \______  /|___||___| \___  /    / ______| __
->        \/         \/                   \/                             \/         \/         \/                \/     \/        \/
+    ________ __________  ____ ___  _______   ___________            _____     __________________  .___ .___ ________________.___.._.
+   /  _____/ \______   \|    |   \ \      \  \__    ___/           /  _  \   /   _____/\_   ___ \ |   ||   |\_   _____/\__  |   || |
+  /   \  ___  |       _/|    |   / /   |   \   |    |     ______  /  /_\  \  \_____  \ /    \  \/ |   ||   | |    __)   /   |   || |
+  \    \_\  \ |    |   \|    |  / /    |    \  |    |    /_____/ /    |    \ /        \\     \____|   ||   | |     \    \____   | \|
+   \______  / |____|_  /|______/  \____|__  /  |____|            \____|__  //_______  / \______  /|___||___| \___  /    / ______| __
+          \/         \/                   \/                             \/         \/         \/                \/     \/        \/
 
 
 Plain-text Awesomizer. Uses [figlet-js](https://github.com/olizilla/figlet-js) forked from [scottgonzalez/figlet-js](https://github.com/scottgonzalez/figlet-js)
+
+Great for making fancy banners:
+
+```js
+asciify: {
+  myBanner: {
+    text: 'Text to asciify'
+  }
+},
+uglify:{
+  options: {
+    banner: '/*!\n <%= asciify_myBanner %> \n*/\n'
+  },
+  all:{
+    src:'Gruntfile.js',
+    dest:'Grunfile.withbanner.min.js'        
+  }
+}
+```
 
 ## Getting Started
 This plugin requires Grunt `~0.4.0`
@@ -30,20 +49,15 @@ grunt.loadNpmTasks('grunt-asciify');
 ### Overview
 In your project's Gruntfile, add a section named `asciify` to the data object passed into `grunt.initConfig()`.
 
-```js
-grunt.initConfig({
-  asciify: {
-    options: {
-      font: 
-    },
-    your_target: {
-      // Target-specific file lists and/or options go here.
-    },
-  },
-})
-```
-
 ### Options
+
+#### Default Options
+```js
+options:{
+  font:'standard'
+  log:false,
+}
+```
 
 #### options.font
 Type: `String`
@@ -57,10 +71,9 @@ Default value: `false`
 
 Write your asciified text to the console
 
-### Usage Examples
+![asciify options.log=true](https://raw.github.com/olizilla/grunt-asciify/master/doc/grunt-asciify.png);
 
-#### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
+### Usage Examples
 
 ```js
 grunt.initConfig({
