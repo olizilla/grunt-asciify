@@ -13,19 +13,6 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
 
-    asciify:{
-      banner:{
-        text: 'BANNERTIME'
-      },
-      bannerDoom:{
-        text: 'THIS IS DOOM',
-        options:{
-          font: 'doom'  
-        }
-      }
-    
-    },
-
     jshint: {
       all: [
         'Gruntfile.js',
@@ -34,7 +21,7 @@ module.exports = function(grunt) {
       ],
       options: {
         jshintrc: '.jshintrc',
-      },
+      }
     },
 
     // Before generating any new files, remove any previously-created files.
@@ -43,23 +30,27 @@ module.exports = function(grunt) {
     },
 
     // Configuration to be run (and then tested).
-    task_figlet: {
+    asciify: {
       default_options: {
-        options: {
-        },
-        files: {
-          'tmp/default_options': ['test/fixtures/testing', 'test/fixtures/123'],
-        },
+        text: 'Asciify',
+        dest: 'tmp/default_options'
       },
+
       custom_options: {
+        text: 'GRUNT!',
         options: {
-          separator: ': ',
-          punctuation: ' !!!',
+          font:'doom',
         },
-        files: {
-          'tmp/custom_options': ['test/fixtures/testing', 'test/fixtures/123'],
-        },
+        dest:'tmp/custom_options'
       },
+
+      toconsole:{
+        text: 'GRUNT-ASCIIFY!',
+        options:{
+          font:'graffiti',
+          log:true
+        }
+      }
     },
 
     // Unit tests.
@@ -79,23 +70,9 @@ module.exports = function(grunt) {
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['clean', 'task_figlet', 'nodeunit']);
-
-  
-  // grunt.registerTask('default', 'My "default" task description.', function() {
-    
-    // var done = this.async();
-
-    // grunt.log.writeln('HARO');
-
-    // art.font('GRUNT!', 'Doom', function(rendered){
-    //   console.log(rendered);
-    //   done();
-    // });
-
-  // });
+  grunt.registerTask('test', ['clean', 'asciify', 'nodeunit']);
 
   // By default, lint and run all tests.
-  grunt.registerTask('default', ['asciify']);
+  grunt.registerTask('default', ['jshint', 'asciify']);
 
 };
