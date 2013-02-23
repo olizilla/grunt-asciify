@@ -1,6 +1,14 @@
 # grunt-asciify
 
-> Plain-text Awesomizer
+>  ________ __________  ____ ___  _______   ___________            _____     __________________  .___ .___ ________________.___.._.
+> /  _____/ \______   \|    |   \ \      \  \__    ___/           /  _  \   /   _____/\_   ___ \ |   ||   |\_   _____/\__  |   || |
+>/   \  ___  |       _/|    |   / /   |   \   |    |     ______  /  /_\  \  \_____  \ /    \  \/ |   ||   | |    __)   /   |   || |
+>     \_\  \ |    |   \|    |  / /    |    \  |    |    /_____/ /    |    \ /        \\     \____|   ||   | |     \    \____   | \|
+> \______  / |____|_  /|______/  \____|__  /  |____|            \____|__  //_______  / \______  /|___||___| \___  /    / ______| __
+>        \/         \/                   \/                             \/         \/         \/                \/     \/        \/
+
+
+Plain-text Awesomizer. Uses [figlet-js](https://github.com/olizilla/figlet-js) forked from [scottgonzalez/figlet-js](https://github.com/scottgonzalez/figlet-js)
 
 ## Getting Started
 This plugin requires Grunt `~0.4.0`
@@ -26,7 +34,7 @@ In your project's Gruntfile, add a section named `asciify` to the data object pa
 grunt.initConfig({
   asciify: {
     options: {
-      // Task-specific options go here.
+      font: 
     },
     your_target: {
       // Target-specific file lists and/or options go here.
@@ -37,17 +45,17 @@ grunt.initConfig({
 
 ### Options
 
-#### options.separator
+#### options.font
 Type: `String`
-Default value: `',  '`
+Default value: `standard`
 
-A string value that is used to do something with whatever.
+The name of the figlet font to use. Full list here: https://github.com/olizilla/figlet-js/tree/master/fonts
 
-#### options.punctuation
-Type: `String`
-Default value: `'.'`
+#### options.log
+Type: `Boolean`
+Default value: `false`
 
-A string value that is used to do something else with whatever else.
+Write your asciified text to the console
 
 ### Usage Examples
 
@@ -57,28 +65,25 @@ In this example, the default options are used to do something with whatever. So 
 ```js
 grunt.initConfig({
   asciify: {
-    options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
+    banner:{
+      text: 'GRUNT-ASCIIFY!',
+      options:{
+        font:'graffiti',
+        log:true
+      }
+    }
   },
-})
-```
 
-#### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
-
-```js
-grunt.initConfig({
-  asciify: {
+  // Use asciify to make banner
+  uglify:{
     options: {
-      separator: ': ',
-      punctuation: ' !!!',
+      banner: '/*!\n <%= asciify_banner %> \n*/\n'
     },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
+    all:{
+      src:'Gruntfile.js',
+      dest:'Grunfile.withbanner.min.js'        
+    }
+  }
 })
 ```
 
@@ -86,4 +91,4 @@ grunt.initConfig({
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
-_(Nothing yet)_
+* 0.1.0 - IT BEGINS. ASCII BANNERS NOW MANDTORY.
