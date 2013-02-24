@@ -1,8 +1,8 @@
 {
   "name": "grunt-asciify",
   "description": "Plain-text Awesomizer",
-  "version": "0.1.0",
-  "homepage": "https://github.com/oli/grunt-asciify",
+  "version": "0.1.1",
+  "homepage": "https://github.com/olizilla/grunt-asciify",
   "author": {
     "name": "olizilla",
     "email": "oli@zilla.org.uk",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/oli/grunt-asciify.git"
+    "url": "git://github.com/olizilla/grunt-asciify.git"
   },
   "bugs": {
-    "url": "https://github.com/oli/grunt-asciify/issues"
+    "url": "https://github.com/olizilla/grunt-asciify/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/oli/grunt-asciify/blob/master/LICENSE-MIT"
+      "url": "https://github.com/olizilla/grunt-asciify/blob/master/LICENSE-MIT"
     }
   ],
   "main": "Gruntfile.js",
