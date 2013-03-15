@@ -1,3 +1,0 @@
-[submodule "tasks/helper/figlet-js"]
-	path = tasks/helper/figlet-js
-	url = git@github.com:olizilla/figlet-js.git
