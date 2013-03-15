@@ -1,6 +1,6 @@
 /*
- * grunt-task-figlet
- * https://github.com/oli/grunt-task-figlet
+ * grunt-asciify
+ * https://github.com/oli/grunt-asciify
  *
  * Copyright (c) 2013 olizilla
  * Licensed under the MIT license.
@@ -8,40 +8,37 @@
 
 'use strict';
 
-var Figlet = require("./helper/figlet-js/figlet-node").Figlet;
+var asciify = require('asciify');
 
 module.exports = function(grunt) {
 
-  // Please see the Grunt documentation for more information regarding task
-  // creation: http://gruntjs.com/creating-tasks
-
-  grunt.registerMultiTask('asciify', 'Awesomize your text', function() {
+  grunt.registerMultiTask('asciify', 'Ascii awesomizer. A Grunt task for better banners and hot logs.', function() {
     
     var done = this.async();
 
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
-      font: 'standard',
-      log:false
+      font: 'graffiti',
+      log: false
     });
 
     var propertyName = 'asciify_' + this.target;
 
     var self = this;
 
-    Figlet.write(this.data.text, options.font, function(str) {
+    asciify(this.data.text, options.font, function(result) {
       
       self.files.forEach(function(file){
 
         if(file.dest){
-          grunt.file.write(file.dest, str);
+          grunt.file.write(file.dest, result);
         }
       });
 
-      grunt.config.set(propertyName, str);
+      grunt.config.set(propertyName, result);
 
       if (options.log){
-        console.log(str);
+        console.log(result);
       }
 
       done();

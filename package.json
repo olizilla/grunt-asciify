@@ -1,7 +1,7 @@
 {
   "name": "grunt-asciify",
-  "description": "Plain-text Awesomizer",
-  "version": "0.1.1",
+  "description": "Ascii awesomizer. A Grunt task for better banners and hot logs",
+  "version": "0.2.0",
   "homepage": "https://github.com/olizilla/grunt-asciify",
   "author": {
     "name": "olizilla",

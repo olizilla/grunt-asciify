@@ -1,5 +1,7 @@
 # grunt-asciify
 
+Ascii awesomizer. A Grunt task for better banners and hot logs.
+
 ```
     _____     __________________  .___ .___ ________________.___.._.
    /  _  \   /   _____/\_   ___ \ |   ||   |\_   _____/\__  |   || |
@@ -8,10 +10,6 @@
  \____|__  //_______  / \______  /|___||___| \___  /    / ______| __
          \/         \/         \/                \/     \/        \/
 ```
-
-Plain-text Awesomizer. Uses [figlet-js](https://github.com/olizilla/figlet-js) forked from [scottgonzalez/figlet-js](https://github.com/scottgonzalez/figlet-js)
-
-Great for making fancy banners:
 
 ```js
 asciify: {
@@ -25,7 +23,7 @@ uglify:{
   },
   all:{
     src:'Gruntfile.js',
-    dest:'Grunfile.withbanner.min.js'        
+    dest:'Gruntfile.withbanner.min.js'        
   }
 }
 ```
@@ -55,14 +53,14 @@ In your project's Gruntfile, add a section named `asciify` to the data object pa
 #### Default Options
 ```js
 options:{
-  font:'standard'
+  font:'graffiti'
   log:false,
 }
 ```
 
 #### options.font
 Type: `String`
-Default value: `standard`
+Default value: `graffiti`
 
 The name of the figlet font to use. Full list here: https://github.com/olizilla/figlet-js/tree/master/fonts
 
@@ -106,3 +104,4 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 * 0.1.0 - IT BEGINS. ASCII BANNERS NOW MANDTORY.
+* 0.2.0 - GRAFFITI BEATS STANDARD AS DEFAULT FONT. NOW DEPENDS ON THE ASCIIFY MODULE.
