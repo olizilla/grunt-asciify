@@ -10,6 +10,9 @@ Ascii awesomizer. A Grunt task for better banners and hot logs.
  \____|__  //_______  / \______  /|___||___| \___  /    / ______| __
          \/         \/         \/                \/     \/        \/
 ```
+[![Dependency Status](https://david-dm.org/olizilla/grunt-asciify.png)](https://david-dm.org/olizilla/grunt-asciify)
+[![Build Status](https://travis-ci.org/olizilla/grunt-asciify.png)](https://travis-ci.org/olizilla/grunt-asciify)
+
 
 ```js
 asciify: {
