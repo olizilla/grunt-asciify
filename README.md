@@ -74,7 +74,7 @@ Default value: `false`
 
 Write your asciified text to the console
 
-![asciify options.log=true](https://raw.github.com/olizilla/grunt-asciify/master/doc/grunt-asciify.png);
+![asciify options.log=true](https://raw.github.com/olizilla/grunt-asciify/master/doc/grunt-asciify.png)
 
 ### Usage Examples
 
