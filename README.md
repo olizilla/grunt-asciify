@@ -13,6 +13,7 @@ Ascii awesomizer. A Grunt task for better banners and hot logs.
 [![Dependency Status](https://david-dm.org/olizilla/grunt-asciify.png)](https://david-dm.org/olizilla/grunt-asciify)
 [![Build Status](https://travis-ci.org/olizilla/grunt-asciify.png)](https://travis-ci.org/olizilla/grunt-asciify)
 
+Running the asciify task as configured below will push your awesomized text into property called asciify_myBanner which can then be used else where, as the template for an awesome file banner for example.
 
 ```js
 asciify: {
@@ -30,6 +31,7 @@ uglify:{
   }
 }
 ```
+Asciify picks a property name to store the output by prepending your target name with `asciify_`. In the above example we used `myBanner` as the target, so the property name became `asciify_myBanner`.
 
 ## Getting Started
 This plugin requires Grunt `~0.4.0`
@@ -48,7 +50,6 @@ grunt.loadNpmTasks('grunt-asciify');
 
 ## The "asciify" task
 
-### Overview
 In your project's Gruntfile, add a section named `asciify` to the data object passed into `grunt.initConfig()`.
 
 ### Options
@@ -73,33 +74,44 @@ Default value: `false`
 
 Write your asciified text to the console
 
-![asciify options.log=true](https://raw.github.com/olizilla/grunt-asciify/master/doc/grunt-asciify.png);
+![asciify options.log=true](https://raw.github.com/olizilla/grunt-asciify/master/doc/grunt-asciify.png)
 
 ### Usage Examples
 
 ```js
 grunt.initConfig({
-  asciify: {
+    
+  asciify: { 
     banner:{
       text: 'GRUNT-ASCIIFY!',
-      options:{
+      
+      // Add the awesome to the console, and use the best font.
+      options:{ 
         font:'graffiti',
         log:true
       }
     }
   },
 
-  // Use asciify to make banner
+  
   uglify:{
+    
+    // Use the property holding our awesomised text in the banner template      
     options: {
       banner: '/*!\n <%= asciify_banner %> \n*/\n'
     },
     all:{
       src:'Gruntfile.js',
-      dest:'Grunfile.withbanner.min.js'        
+      dest:'Grunfile.withbanner.min.js'
     }
   }
-})
+});
+
+grunt.loadNpmTasks('grunt-asciify');
+grunt.loadNpmTasks('grunt-contrib-uglify');
+
+// Run asciify before uglify so the asciify_banner property is available.
+grunt.registerTask('default', ['asciify', 'uglify']);
 ```
 
 ## Contributing
