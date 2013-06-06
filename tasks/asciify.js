@@ -26,7 +26,12 @@ module.exports = function(grunt) {
 
 		var self = this;
 
-		asciify(this.data.text, options.font, function(result) {
+		asciify(this.data.text, options.font, function(err, result) {
+
+			if (err) {
+				grunt.log.error('Failed to asciify:', err);
+				return done();
+			}
 			
 			self.files.forEach(function(file){
 
