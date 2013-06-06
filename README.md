@@ -13,7 +13,7 @@ Ascii awesomizer. A Grunt task for better banners and hot logs.
 [![Dependency Status](https://david-dm.org/olizilla/grunt-asciify.png)](https://david-dm.org/olizilla/grunt-asciify)
 [![Build Status](https://travis-ci.org/olizilla/grunt-asciify.png)](https://travis-ci.org/olizilla/grunt-asciify)
 
-Running the asciify task as configured below will push your awesomized text into property called asciify_myBanner which can then be used else where, as the template for an awesome file banner for example.
+Running the asciify task as configured below will push your awesomized text into property called `asciify_myBanner` which can then be used else where, as the template for an awesome file banner for example.
 
 ```js
 asciify: {
