@@ -1,4 +1,5 @@
 # grunt-asciify
+# grunt-asciify
 
 Ascii awesomizer. A Grunt task for better banners and hot logs.
 
@@ -66,7 +67,7 @@ options:{
 Type: `String`
 Default value: `graffiti`
 
-The name of the figlet font to use. Full list here: https://github.com/olizilla/figlet-js/tree/master/fonts
+The name of the figlet font to use. View the [font list](https://github.com/olizilla/figlet-js/tree/master/fonts) and [examples](http://www.figlet.org/examples.html). Use the [asciify](https://npmjs.org/package/asciify) module to show all fonts for your text: `asciify -a "All The Fonts!"`.
 
 #### options.log
 Type: `Boolean`
