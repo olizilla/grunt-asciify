@@ -43,6 +43,9 @@ module.exports = function(grunt) {
 			grunt.config.set(propertyName, result);
 
 			if (options.log){
+				if (process.stdout.isTTY){
+					result = trimToMaxWidth(process.stdout.columns, result);
+				}
 				console.log(result);
 			}
 
@@ -50,3 +53,11 @@ module.exports = function(grunt) {
 		});
 	});
 };
+
+// truncate the ascii art to fit a thing
+function trimToMaxWidth (width, text) {
+	var truncated = text.split('\n').map(function (line) {
+		return line.substring(0, width);
+	});
+	return truncated.join('\n');
+}

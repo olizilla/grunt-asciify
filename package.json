@@ -1,7 +1,7 @@
 {
   "name": "grunt-asciify",
   "description": "Ascii awesomizer. A Grunt task for better banners and hot logs",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "homepage": "https://github.com/olizilla/grunt-asciify",
   "author": {
     "name": "olizilla",
@@ -34,8 +34,8 @@
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-cli": "~0.1.6",
-    "grunt-contrib-jshint": "~0.6.0",
-    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-jshint": "~0.7.0",
+    "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-nodeunit": "~0.2.0",
     "grunt-contrib-uglify": "~0.2.2"
   },
